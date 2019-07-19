@@ -1,0 +1,20 @@
+# HTTP 2 + TLS 1.3 Proxy
+https://domain.name:993 {
+  gzip
+  push
+  log stdout
+
+  tls mail@domain.name {
+    protocols tls1.3
+    curves x25519
+    alpn h2
+  }
+
+  forwardproxy {
+    basicauth user1 password1
+    #basicauth user2 password2
+    #probe_resistance pexcn.localhost
+    hide_ip
+    hide_via
+  }
+}
