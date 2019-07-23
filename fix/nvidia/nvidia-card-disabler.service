@@ -5,8 +5,11 @@ After=sysinit.target
 [Service]
 Type=oneshot
 RemainAfterExit=yes
-ExecStart=/usr/bin/sh -c "modprobe bbswitch || true; echo 1 > /sys/bus/pci/devices/0000:01:00.0/remove || true"
-ExecStop=/usr/bin/sh -c "rmmod bbswitch || true; echo 1 > /sys/bus/pci/rescan || true"
+ExecStart=/usr/bin/sh -c "modprobe bbswitch || true; \
+  echo 1 > /sys/bus/pci/devices/0000:01:00.0/remove || true \
+  echo 1 > /sys/bus/pci/devices/0000:01:00.1/remove || true"
+ExecStop=/usr/bin/sh -c "rmmod bbswitch || true; \
+  echo 1 > /sys/bus/pci/rescan || true"
 
 [Install]
 WantedBy=sysinit.target
