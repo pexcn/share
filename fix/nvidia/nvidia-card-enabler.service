@@ -6,5 +6,5 @@ Requires=nvidia-card-disabler.service
 [Service]
 Type=oneshot
 RemainAfterExit=yes
-ExecStart=/usr/bin/sh -c "echo '\\_SB.PCI0.PEG0.PEGP._ON' > /proc/acpi/call; echo 1 > /sys/bus/pci/rescan"
-ExecStop=/usr/bin/sh -c "echo 1 > /sys/bus/pci/devices/0000:01:00.0/remove; echo '\\_SB.PCI0.PEG0.PEGP._OFF' > /proc/acpi/call"
+ExecStart=/usr/bin/sh -c "echo 1 > /sys/bus/pci/rescan"
+ExecStop=/usr/bin/sh -c "echo 1 > /sys/bus/pci/devices/0000:01:00.0/remove"
