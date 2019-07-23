@@ -7,4 +7,4 @@ Requires=nvidia-card-disabler.service
 Type=oneshot
 RemainAfterExit=yes
 ExecStart=/usr/bin/sh -c "rmmod bbswitch; echo 1 > /sys/bus/pci/rescan"
-ExecStop=/usr/bin/sh -c "echo 1 > /sys/bus/pci/devices/0000:01:00.0/remove; modprobe bbswitch"
+ExecStop=/usr/bin/sh -c "modprobe bbswitch; echo 1 > /sys/bus/pci/devices/0000:01:00.0/remove"
