@@ -1,5 +1,5 @@
 [Unit]
-Description=Nvidia Graphic Card OnBoot Disabler
+Description=Nvidia Graphic Card Disabler
 After=sysinit.target
 
 [Service]
