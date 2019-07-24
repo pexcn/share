@@ -5,13 +5,10 @@ After=sysinit.target
 [Service]
 Type=oneshot
 RemainAfterExit=yes
-ExecStartPre=/usr/bin/sleep 30
-ExecStart=/usr/bin/sh -c "rmmod nouveau || true; \
-  modprobe bbswitch load_state=0 unload_state=1 || true; \
+ExecStart=/usr/bin/sh -c "modprobe bbswitch load_state=0 unload_state=1 || true; \
   echo 1 > /sys/bus/pci/devices/0000:01:00.0/remove || true; \
   echo 1 > /sys/bus/pci/devices/0000:01:00.1/remove || true"
 ExecStop=/usr/bin/sh -c "rmmod bbswitch || true; \
-  modprobe nouveau || true; \
   echo 1 > /sys/bus/pci/rescan || true"
 
 [Install]
