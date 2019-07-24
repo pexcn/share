@@ -5,6 +5,7 @@ After=sysinit.target
 [Service]
 Type=oneshot
 RemainAfterExit=yes
+ExecStartPre=/usr/bin/sleep 30
 ExecStart=/usr/bin/sh -c "rmmod nouveau || true; \
   modprobe bbswitch || true; \
   echo 1 > /sys/bus/pci/devices/0000:01:00.0/remove || true; \
