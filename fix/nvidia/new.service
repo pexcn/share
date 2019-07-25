@@ -5,11 +5,11 @@ After=sysinit.target
 [Service]
 Type=oneshot
 RemainAfterExit=yes
-ExecStart=/usr/bin/sh -c "tee /proc/acpi/bbswitch <<< OFF || true; \
-  echo 1 > /sys/bus/pci/devices/0000:01:00.0/remove || true; \
-  echo 1 > /sys/bus/pci/devices/0000:01:00.1/remove || true"
-ExecStop=/usr/bin/sh -c "tee /proc/acpi/bbswitch <<< ON || true; \
-  echo 1 > /sys/bus/pci/rescan || true"
+ExecStart=/usr/bin/sh -c "tee /proc/acpi/bbswitch <<< OFF; \
+  echo 1 > /sys/bus/pci/devices/0000:01:00.0/remove; \
+  echo 1 > /sys/bus/pci/devices/0000:01:00.1/remove" || true
+ExecStop=/usr/bin/sh -c "tee /proc/acpi/bbswitch <<< ON; \
+  echo 1 > /sys/bus/pci/rescan" || true
 
 [Install]
 WantedBy=sysinit.target
