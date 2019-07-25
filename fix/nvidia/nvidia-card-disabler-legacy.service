@@ -1,0 +1,15 @@
+[Unit]
+Description=Nvidia Graphic Card Disabler
+After=sysinit.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/bin/sh -c "modprobe bbswitch load_state=0 unload_state=1 && sleep 1; \
+  echo 1 > /sys/bus/pci/devices/0000:01:00.0/remove && sleep 1; \
+  echo 1 > /sys/bus/pci/devices/0000:01:00.1/remove && sleep 1" || true
+ExecStop=/usr/bin/sh -c "rmmod bbswitch && sleep 1; \
+  echo 1 > /sys/bus/pci/rescan && sleep 1" || true
+
+[Install]
+WantedBy=sysinit.target
