@@ -1,0 +1,14 @@
+
+config cfg
+	option bind_addr '0.0.0.0'
+	option bind_port '5354'
+	option chnroute '/etc/cleandns_chnroute.txt'
+	option china_ip '<cn_ip_address>/24'
+	option foreign_ip '<us_ip_address>/24'
+	option dns_server '127.0.0.1:5300'
+	option compression '1'
+	option timeout '5'
+	#option log_file '/var/log/cleandns.log'
+	option log_level '0'
+	option lazy '0'
+	#option proxy 'socks5://127.0.0.1:1080'
