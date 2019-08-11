@@ -1,0 +1,49 @@
+{
+  "BindAddress": ":5353",
+  "DebugHTTPAddress": "127.0.0.1:5555",
+  "PrimaryDNS": [
+    {
+      "Name": "DNSPod",
+      "Address": "119.29.29.29:53",
+      "Protocol": "udp",
+      "SOCKS5Address": "",
+      "Timeout": 5,
+      "EDNSClientSubnet": {
+        "Policy": "manual",
+        "ExternalIP": "CN_IP",
+        "NoCookie": false
+      }
+    }
+  ],
+  "AlternativeDNS": [
+    {
+      "Name": "GoogleDNS",
+      "Address": "127.0.0.1:5300",
+      "Protocol": "udp",
+      "SOCKS5Address": "",
+      "Timeout": 5,
+      "EDNSClientSubnet": {
+        "Policy": "manual",
+        "ExternalIP": "US_VPS_IP",
+        "NoCookie": false
+      }
+    }
+  ],
+  "OnlyPrimaryDNS": false,
+  "IPv6UseAlternativeDNS": false,
+  "WhenPrimaryDNSAnswerNoneUse": "AlternativeDNS",
+  "IPNetworkFile": {
+    "Primary": "/etc/overture/chnroute.txt",
+    "Alternative": "/etc/overture/empty"
+  },
+  "DomainFile": {
+    "Primary": "/etc/overture/chinalist.txt",
+    "Alternative": "/etc/overture/gfwlist.txt",
+    "Matcher":  "suffix-tree"
+  },
+  "HostsFile": "/etc/overture/empty",
+  "MinimumTTL": 0,
+  "DomainTTLFile" : "/etc/overture/empty",
+  "CacheSize" : 0,
+  "RejectQType": [255]
+}
