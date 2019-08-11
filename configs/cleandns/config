@@ -18,3 +18,4 @@ config cfg
 	#option dns_server 'tcp://8.8.8.8:53'     # -> 有点问题，有时候会把 Google 系的域名解析到台湾
 	option dns_server '127.0.0.1:5300'        # -> 运行良好
 	option dns_server 'tcp://127.0.0.1:5300'  # -> 运行良好
+
