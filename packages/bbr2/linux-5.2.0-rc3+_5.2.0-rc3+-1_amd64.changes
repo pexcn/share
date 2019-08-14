@@ -1,0 +1,43 @@
+Format: 1.8
+Date: Wed, 14 Aug 2019 19:31:49 +0800
+Source: linux-5.2.0-rc3+
+Binary: linux-image-5.2.0-rc3+ linux-headers-5.2.0-rc3+ linux-libc-dev linux-image-5.2.0-rc3+-dbg
+Architecture: source amd64
+Version: 5.2.0-rc3+-1
+Distribution: stretch
+Urgency: low
+Maintainer: pexcn <pexcn@af4282205030>
+Changed-By: pexcn <pexcn@af4282205030>
+Description:
+ linux-headers-5.2.0-rc3+ - Linux kernel headers for 5.2.0-rc3+ on amd64
+ linux-image-5.2.0-rc3+ - Linux kernel, version 5.2.0-rc3+
+ linux-image-5.2.0-rc3+-dbg - Linux kernel debugging symbols for 5.2.0-rc3+
+ linux-libc-dev - Linux support headers for userspace development
+Changes:
+ linux-5.2.0-rc3+ (5.2.0-rc3+-1) stretch; urgency=low
+ .
+   * Custom built Linux kernel.
+Checksums-Sha1:
+ 35bfcbc7fd16435ed4a3a7c43932290c353ae066 1168 linux-5.2.0-rc3+_5.2.0-rc3+-1.dsc
+ 8f4a546c1d5e630c0278b5794482ca96cb5d4fdb 170517794 linux-5.2.0-rc3+_5.2.0-rc3+.orig.tar.gz
+ a460bd12b76e182fc54efb3a758a5706c7e077b5 220562 linux-5.2.0-rc3+_5.2.0-rc3+-1.diff.gz
+ ce647df297550883fe2431d301e15116fff9814c 5224 linux-5.2.0-rc3+_5.2.0-rc3+-1_amd64.buildinfo
+ fa1d65e4d0e1f6e43f59c6485b0bf63e876abb88 11345508 linux-headers-5.2.0-rc3+_5.2.0-rc3+-1_amd64.deb
+ f20ee459cf681e280bae2d168b958ea483928fcc 41577342 linux-image-5.2.0-rc3+_5.2.0-rc3+-1_amd64.deb
+ 20270f9c2d084ac5debdf51e2ba7b8b5a846c52b 1060770 linux-libc-dev_5.2.0-rc3+-1_amd64.deb
+Checksums-Sha256:
+ 53b54a8a4da46e9d84ba4e6b70984aec39feec560f97c48aaddf61998bef8314 1168 linux-5.2.0-rc3+_5.2.0-rc3+-1.dsc
+ bee86b4b43a8ddcd5038ed3dd3cd42c91477643dd20a3a6940562f05f5de0157 170517794 linux-5.2.0-rc3+_5.2.0-rc3+.orig.tar.gz
+ 0029824d2b19aebebf42443837a882918c1651fa3455bac57f119ba887576da9 220562 linux-5.2.0-rc3+_5.2.0-rc3+-1.diff.gz
+ d38dfda5938a7cb40d37fa56a8f79f15fe131eaaf791799888ea27303a993123 5224 linux-5.2.0-rc3+_5.2.0-rc3+-1_amd64.buildinfo
+ 82a540982d0c918e947d73672d0ec8ea113f1e4950fc6ab7efe7abf2fcd0cded 11345508 linux-headers-5.2.0-rc3+_5.2.0-rc3+-1_amd64.deb
+ 01908af748d13d80348a4a08922e3cc75b5f7a5473da2be254f6241566dc7867 41577342 linux-image-5.2.0-rc3+_5.2.0-rc3+-1_amd64.deb
+ 75ead071a77cad9101612e535fd09330b18c899ce110a6245e65e8f77be4adb2 1060770 linux-libc-dev_5.2.0-rc3+-1_amd64.deb
+Files:
+ 5f82b4d3331118774264fae93b2ff452 1168 kernel optional linux-5.2.0-rc3+_5.2.0-rc3+-1.dsc
+ 6a658fd006614da30c50f8403578ab7c 170517794 kernel optional linux-5.2.0-rc3+_5.2.0-rc3+.orig.tar.gz
+ f08137125f480e619d036526b2e98e23 220562 kernel optional linux-5.2.0-rc3+_5.2.0-rc3+-1.diff.gz
+ fe318e21fa4ff1fadf38bae4a128b069 5224 kernel optional linux-5.2.0-rc3+_5.2.0-rc3+-1_amd64.buildinfo
+ 964563942ccb96bf0b1c70140bc609a1 11345508 kernel optional linux-headers-5.2.0-rc3+_5.2.0-rc3+-1_amd64.deb
+ 8e44f4434408e905fbd3c18d20323e56 41577342 kernel optional linux-image-5.2.0-rc3+_5.2.0-rc3+-1_amd64.deb
+ e50f4eacb1109362b0011e8de2d7f9ef 1060770 devel optional linux-libc-dev_5.2.0-rc3+-1_amd64.deb
