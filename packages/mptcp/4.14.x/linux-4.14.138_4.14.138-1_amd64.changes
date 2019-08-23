@@ -1,0 +1,39 @@
+Format: 1.8
+Date: Fri, 23 Aug 2019 17:12:20 +0800
+Source: linux-4.14.138
+Binary: linux-image-4.14.138 linux-headers-4.14.138 linux-libc-dev
+Architecture: source amd64
+Version: 4.14.138-1
+Distribution: stretch
+Urgency: low
+Maintainer: Anonymous <root@b00f7e1ed6eb>
+Changed-By: Anonymous <root@b00f7e1ed6eb>
+Description:
+ linux-headers-4.14.138 - Linux kernel headers for 4.14.138 on ${kernel:debarch}
+ linux-image-4.14.138 - Linux kernel, version 4.14.138
+ linux-libc-dev - Linux support headers for userspace development
+Changes:
+ linux-4.14.138 (4.14.138-1) stretch; urgency=low
+ .
+   * Custom built Linux kernel.
+Checksums-Sha1:
+ 43179f28e61838ac73b061529457ce72b96c871f 1015 linux-4.14.138_4.14.138-1.dsc
+ 119d7be9cf8500700260fc6c915e9bd5ae005262 162076147 linux-4.14.138_4.14.138.orig.tar.gz
+ 94ea0b9be1b989ecd7ed7cb7db833453f9b5f2f5 1211 linux-4.14.138_4.14.138-1.debian.tar.gz
+ 289e178064b115a6a1a27614cc07fa3a24d4b2fb 11220128 linux-headers-4.14.138_4.14.138-1_amd64.deb
+ a73e2c8b9e0c13f0a3c2e20b6a7b28e07096c5f4 40952366 linux-image-4.14.138_4.14.138-1_amd64.deb
+ ae879ea87172c1a4617fb6cc78ccdb43a61d9b3d 961168 linux-libc-dev_4.14.138-1_amd64.deb
+Checksums-Sha256:
+ 9ba98739868cf7ce996684b40ef34482c2cf4a692fb80f95b4abbaff3b49b379 1015 linux-4.14.138_4.14.138-1.dsc
+ a11c4dd010cfaa5259414d60eb5bf6819911bceb1cf528a2aeba2ce959d6123a 162076147 linux-4.14.138_4.14.138.orig.tar.gz
+ dff3089e160d85b6ed61d05f8c303b7a88282abd3e7350722d1100910611964a 1211 linux-4.14.138_4.14.138-1.debian.tar.gz
+ 7cf2b3b9a85f2da4cb4dc4bb03c7ea3b3d76c3151461884d593cc6d301295695 11220128 linux-headers-4.14.138_4.14.138-1_amd64.deb
+ 14d498d5c8241d6ba63dce284c826547f96dc99815542b0cbfd4ea8322c3a1b6 40952366 linux-image-4.14.138_4.14.138-1_amd64.deb
+ 954730befa4bb2e9fd462fbe523b614a402019293af5891b7c94f1e2de8c4edd 961168 linux-libc-dev_4.14.138-1_amd64.deb
+Files:
+ d88026d656399cc02052b6da203d48d6 1015 kernel optional linux-4.14.138_4.14.138-1.dsc
+ 39fbcb03daef9d319d2570829655f815 162076147 kernel optional linux-4.14.138_4.14.138.orig.tar.gz
+ 255fc5ac5369bf10bb343a74bdee351e 1211 kernel optional linux-4.14.138_4.14.138-1.debian.tar.gz
+ 8cc05a7149270860f5a4d4aa00d84fc5 11220128 kernel optional linux-headers-4.14.138_4.14.138-1_amd64.deb
+ 2ee8469c47485b259e52ed0c937a19b7 40952366 kernel optional linux-image-4.14.138_4.14.138-1_amd64.deb
+ d30d0d8df406706027a200561a5bc859 961168 devel optional linux-libc-dev_4.14.138-1_amd64.deb

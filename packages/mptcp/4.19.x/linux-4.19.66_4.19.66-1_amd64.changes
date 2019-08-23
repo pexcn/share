@@ -1,0 +1,43 @@
+Format: 1.8
+Date: Fri, 23 Aug 2019 16:57:27 +0800
+Source: linux-4.19.66
+Binary: linux-image-4.19.66 linux-headers-4.19.66 linux-libc-dev linux-image-4.19.66-dbg
+Architecture: source amd64
+Version: 4.19.66-1
+Distribution: stretch
+Urgency: low
+Maintainer: pexcn <pexcn@22bbe533d257>
+Changed-By: pexcn <pexcn@22bbe533d257>
+Description:
+ linux-headers-4.19.66 - Linux kernel headers for 4.19.66 on amd64
+ linux-image-4.19.66 - Linux kernel, version 4.19.66
+ linux-image-4.19.66-dbg - Linux kernel debugging symbols for 4.19.66
+ linux-libc-dev - Linux support headers for userspace development
+Changes:
+ linux-4.19.66 (4.19.66-1) stretch; urgency=low
+ .
+   * Custom built Linux kernel.
+Checksums-Sha1:
+ bc8b5a7fb45f37f03d882beda7681355f75034ad 1062 linux-4.19.66_4.19.66-1.dsc
+ cbe0dc388e8103dd85e629a4fba321fc34dc36c7 165193109 linux-4.19.66_4.19.66.orig.tar.gz
+ 1022e002964fa783e0eb5810edaa1cc99d3658eb 258000 linux-4.19.66_4.19.66-1.diff.gz
+ f5b218142f8809ef2ba0b2d502b285e0c29fa4b6 4994 linux-4.19.66_4.19.66-1_amd64.buildinfo
+ 240547fd9ef0c4b8e41f9aa28bf98966af5a33da 11040110 linux-headers-4.19.66_4.19.66-1_amd64.deb
+ 76731b73d9556f2265f95fd7c7dc9c5f316e2f24 41361370 linux-image-4.19.66_4.19.66-1_amd64.deb
+ 2ccc5967f452fdac7cdfeab9d1e32958529ba9c2 1018704 linux-libc-dev_4.19.66-1_amd64.deb
+Checksums-Sha256:
+ d758c8fa498ebda97cf83588ad667850795540bfdce029e0b640d0f5c742a555 1062 linux-4.19.66_4.19.66-1.dsc
+ 2335eb430da9c875504dea479e44a35218e6842dcb8d98b49c4a6a122a18eec7 165193109 linux-4.19.66_4.19.66.orig.tar.gz
+ 482cc852f0e430716a89dc41484c0b93760965b717fbcf9700e4134d6e489680 258000 linux-4.19.66_4.19.66-1.diff.gz
+ 2cad231936e9ff018adbfbeb5b28be4694b75fdd8fe2fad513c49ff8fc765cf6 4994 linux-4.19.66_4.19.66-1_amd64.buildinfo
+ 7203286e9d65dab461102413e24590ed5644cf5202afbc052990d5525fbc5776 11040110 linux-headers-4.19.66_4.19.66-1_amd64.deb
+ a9ff289e581ae2ebec509c57b0c2a52d20577d1ce460004ca9fabc8255c19a9a 41361370 linux-image-4.19.66_4.19.66-1_amd64.deb
+ d65fabb82f9ecc6565e3b0372d4b8c9ddfd36db6d335544caec1d70d5fbab81b 1018704 linux-libc-dev_4.19.66-1_amd64.deb
+Files:
+ 63799f7ef3cb528e4f2b9fab43a8e907 1062 kernel optional linux-4.19.66_4.19.66-1.dsc
+ 4f8519377c685bc2828f0a0b877a7397 165193109 kernel optional linux-4.19.66_4.19.66.orig.tar.gz
+ 8874388a320ad869a1ed7c94689f86be 258000 kernel optional linux-4.19.66_4.19.66-1.diff.gz
+ 57102763827c315dfb6bd0dfc77cc13e 4994 kernel optional linux-4.19.66_4.19.66-1_amd64.buildinfo
+ f0788ef4a74cc8c20e40356ea51bcb68 11040110 kernel optional linux-headers-4.19.66_4.19.66-1_amd64.deb
+ ca8d973f4531b516f0b85629997c131d 41361370 kernel optional linux-image-4.19.66_4.19.66-1_amd64.deb
+ 77aa94d761d15ce7add7b43b2367e107 1018704 devel optional linux-libc-dev_4.19.66-1_amd64.deb
