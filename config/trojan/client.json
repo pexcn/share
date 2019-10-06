@@ -11,7 +11,7 @@
     "ssl": {
         "verify": true,
         "verify_hostname": true,
-        "cert": "/path/to/domain.name.cer",
+        "cert": "",
         "cipher": "ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES256-GCM-SHA384",
         "sni": "",
         "alpn": [
