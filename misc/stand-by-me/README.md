@@ -1,5 +1,6 @@
 ```bash
 # channel
+# reference: https://trac.ffmpeg.org/wiki/AudioChannelManipulation
 ffmpeg -i ok.m4a -af "pan=stereo|c0=c1|c1=c1" ok-fix.m4a
 ffmpeg -i ok.webm -af "pan=stereo|c0=c1|c1=c1" ok-fix.webm
 
