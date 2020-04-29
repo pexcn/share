@@ -1,0 +1,5 @@
+# 兰州养生网
+*://*.lanzhouyangsheng.com/*
+
+# CSDN
+*://*.blog.csdn.net/*
