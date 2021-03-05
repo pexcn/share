@@ -1,0 +1,90 @@
+From 36edf5c262a8cbb2507fb4ea4c740ee0ae8a3637 Mon Sep 17 00:00:00 2001
+From: pexcn <i@pexcn.me>
+Date: Wed, 15 Apr 2020 18:25:36 +0800
+Subject: [PATCH] refine
+
+---
+ Makefile                   | 14 +++++++-------
+ files/dns-forwarder.config |  1 +
+ files/dns-forwarder.init   |  8 ++++----
+ 3 files changed, 12 insertions(+), 11 deletions(-)
+
+diff --git a/Makefile b/Makefile
+index 19604a3..c64d9c9 100644
+--- a/Makefile
++++ b/Makefile
+@@ -1,6 +1,6 @@
+ #
+ # Copyright (C) 2015 OpenWrt-dist
+-# Copyright (C) 2015 Jian Chang <aa65535@live.com>
++# Copyright (C) 2015-2020 Jian Chang <aa65535@live.com>
+ #
+ # This is free software, licensed under the GNU General Public License v3.
+ # See /LICENSE for more information.
+@@ -15,15 +15,15 @@ PKG_RELEASE:=2
+ PKG_SOURCE_PROTO:=git
+ PKG_SOURCE_URL:=https://github.com/aa65535/hev-dns-forwarder.git
+ PKG_SOURCE_VERSION:=289e8c9c7167200668dff83b1e0cbce258665387
+-PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_VERSION)-$(PKG_SOURCE_VERSION)
+ PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION)-$(PKG_SOURCE_VERSION).tar.gz
++PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_VERSION)-$(PKG_SOURCE_VERSION)
++PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)/$(PKG_SOURCE_SUBDIR)
+ 
+ PKG_LICENSE:=GPLv3
+ PKG_LICENSE_FILES:=LICENSE
+ PKG_MAINTAINER:=Jian Chang <aa65535@live.com>
+ 
+-PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)/$(PKG_SOURCE_SUBDIR)
+-
++PKG_USE_MIPS16:=0
+ PKG_BUILD_PARALLEL:=1
+ 
+ include $(INCLUDE_DIR)/package.mk
+@@ -46,10 +46,10 @@ endef
+ define Package/dns-forwarder/install
+ 	$(INSTALL_DIR) $(1)/usr/bin
+ 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/src/hev-dns-forwarder $(1)/usr/bin/dns-forwarder
+-	$(INSTALL_DIR) $(1)/etc/config
+-	$(INSTALL_DATA) ./files/dns-forwarder.config $(1)/etc/config/dns-forwarder
+ 	$(INSTALL_DIR) $(1)/etc/init.d
+-	$(INSTALL_BIN) ./files/dns-forwarder.init $(1)/etc/init.d/dns-forwarder
++	$(INSTALL_BIN) files/dns-forwarder.init $(1)/etc/init.d/dns-forwarder
++	$(INSTALL_DIR) $(1)/etc/config
++	$(INSTALL_CONF) files/dns-forwarder.config $(1)/etc/config/dns-forwarder
+ endef
+ 
+ $(eval $(call BuildPackage,dns-forwarder))
+diff --git a/files/dns-forwarder.config b/files/dns-forwarder.config
+index 852fec2..0428069 100644
+--- a/files/dns-forwarder.config
++++ b/files/dns-forwarder.config
+@@ -4,3 +4,4 @@ config dns-forwarder
+ 	option listen_addr '0.0.0.0'
+ 	option listen_port '5300'
+ 	option dns_servers '8.8.8.8'
++
+diff --git a/files/dns-forwarder.init b/files/dns-forwarder.init
+index 2b14439..bbe2ca0 100644
+--- a/files/dns-forwarder.init
++++ b/files/dns-forwarder.init
+@@ -1,6 +1,6 @@
+ #!/bin/sh /etc/rc.common
+ #
+-# Copyright (C) 2016 Jian Chang <aa65535@live.com>
++# Copyright (C) 2016-2020 Jian Chang <aa65535@live.com>
+ #
+ # This is free software, licensed under the GNU General Public License v3.
+ # See /LICENSE for more information.
+@@ -16,9 +16,9 @@ append_parm() {
+ 	local switch="$3"
+ 	local default="$4"
+ 	local _loctmp
+-	config_get _loctmp "$section" "$option"
+-	[ -n "$_loctmp" -o -n "$default" ] || return 0
+-	procd_append_param command "$switch" "${_loctmp:-$default}"
++	config_get _loctmp "$section" "$option" "$default"
++	[ -n "$_loctmp" ] || return 0
++	procd_append_param command "$switch" "$_loctmp"
+ }
+ 
+ start_instance() {
