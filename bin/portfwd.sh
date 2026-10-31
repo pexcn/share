@@ -25,4 +25,5 @@ if [ "$#" -ne 2 ]; then
 fi
 
 sysctl -w net.ipv4.ip_forward=1 >/dev/null 2>&1
+iptables -P FORWARD ACCEPT
 portfwd "$@"
