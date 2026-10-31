@@ -56,7 +56,8 @@ security_encode() {
 post_request() {
   local response_body
 
-  if ! response_body=$(curl -q -sS --connect-timeout 5 --max-time 20 \
+  if ! response_body=$(curl -q -sS --connect-timeout 10 --max-time 60 \
+    --retry 3 --retry-delay 3 --retry-connrefused \
     -e "$BASE_URL" -H 'Content-Type: text/plain;charset=UTF-8' \
     --data "$2" \
     "$BASE_URL?code=$1&asyn=${3:-0}${session_id:+&id=$session_id}"); then
@@ -100,7 +101,7 @@ reboot_ap() {
   local response
 
   if ! response=$(post_request 6 '' 1); then
-    echo 'Reboot result uncertain; not retrying' >&2
+    echo 'Reboot result uncertain after retries; check the AP' >&2
     exit 1
   fi
   if [ "$(printf '%s\n' "$response" | sed -n '1p')" != 00000 ]; then
